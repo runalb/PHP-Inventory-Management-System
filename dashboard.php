@@ -62,8 +62,8 @@ session_start();
 
     <div class="row my-4">
       <div class="col-sm">
-        <button class="btn btn-block action-btn p-3" onclick="location.href='issue-book.php'">
-          <i class="fas fa-book pr-3"></i> Issue Books
+        <button class="btn btn-block action-btn p-3" onclick="location.href='sell-product.php'">
+          <i class="fas fa-book pr-3"></i> Sell Product
         </button>
       </div>
 
