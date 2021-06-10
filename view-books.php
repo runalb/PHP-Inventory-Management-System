@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Books</title>
+    <title>View Products</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css" >
@@ -36,7 +36,7 @@ session_start();
 
                 <div class="mt-4">
                     <div class="text-center p-3">
-                        <h3 class="theme-color">All Books</h3>
+                        <h3 class="theme-color">All Products</h3>
                     </div>
                 </div>
 
@@ -44,7 +44,7 @@ session_start();
 		              $servername = "localhost";
 		              $username = "root";
 		              $password = "";
-		              $dbname ="librarydb";
+		              $dbname ="inventory_db";
 
 		              // Create connection
 		              $conn = new mysqli($servername, $username, $password, $dbname);
@@ -53,16 +53,16 @@ session_start();
 			              die("Connection failed: " . $conn->connect_error);
 		              } 
 
-                  $sql='SELECT * FROM book_table';
+                  $sql='SELECT * FROM available_stock_table';
                   $ret=mysqli_query($conn,$sql);
                   if(mysqli_num_rows($ret)>0)
                   {
 					          
-                    echo"<table class='table table-striped'><thead><tr><th scope='col'>Book ID</th><th scope='col'>Book Name</th><th scope='col'>Author</th><th scope='col'>Number of Copies</th></tr></thead><tbody>";
+                    echo"<table class='table table-striped'><thead><tr><th scope='col'>Product ID</th><th scope='col'>Product Name</th><th scope='col'>Product Price</th><th scope='col'>Number of Copies</th></tr></thead><tbody>";
                 
 					          while($row=mysqli_fetch_assoc($ret))
 					          {
-						          echo"<tr><th scope='row'>{$row['book_id']}</th><td>{$row['book_name']}</td><td>{$row['author_name']}</td><td>{$row['quantity']}</td></tr>";
+						          echo"<tr><th scope='row'>{$row['product_id']}</th><td>{$row['product_name']}</td><td>{$row['product_price']}</td><td>{$row['quantity']}</td></tr>";
 					          }
             
 			            echo"</tbody></table>";
@@ -72,7 +72,7 @@ session_start();
                   }
                   if(mysqli_num_rows($ret)==0)
                   {
-                      echo "<h1 class='text-center'>No Books are thier to view....</h1><div class='col'><form action='dashboard.php'><button type='submit' class='btn action-btn btn-block mt-4'>Done</button></form></div>";
+                      echo "<h1 class='text-center'>No Products are thier to view....</h1><div class='col'><form action='dashboard.php'><button type='submit' class='btn action-btn btn-block mt-4'>Done</button></form></div>";
 
                   }?>
                 
