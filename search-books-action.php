@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Books - Action</title>
+    <title>Search Products - Action</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css" >
@@ -44,7 +44,7 @@ session_start();
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
-		$dbname ="librarydb";
+		$dbname ="inventory_db";
 
 		// Create connection
 		$conn = new mysqli($servername, $username, $password, $dbname);
@@ -53,17 +53,17 @@ session_start();
 			die("Connection failed: " . $conn->connect_error);
 		} 
 		
-		$book = filter_input(INPUT_GET,'query');
+		$product = filter_input(INPUT_GET,'query');
 		
-		$sql="SELECT * FROM book_table WHERE book_id='$book' OR book_name='$book'";
+		$sql="SELECT * FROM available_stock_table WHERE product_id='$product' OR product_name='$product'";
 		$ret=mysqli_query($conn,$sql);
             if(mysqli_num_rows($ret)>0)
             {
-            echo"<table class='table table-striped'><thead><tr><th scope='col'>Book ID</th><th scope='col'>Book Name</th><th scope='col'>Author</th><th scope='col'>Number of Copies</th></tr></thead><tbody>";
+            echo"<table class='table table-striped'><thead><tr><th scope='col'>Product ID</th><th scope='col'>Product Name</th><th scope='col'>Product Price</th><th scope='col'>Quantity</th></tr></thead><tbody>";
                 
             while($row=mysqli_fetch_assoc($ret))
             {
-                echo"<tr><th scope='row'>{$row['book_id']}</th><td>{$row['book_name']}</td><td>{$row['author_name']}</td><td>{$row['quantity']}</td></tr>";
+                echo"<tr><th scope='row'>{$row['product_id']}</th><td>{$row['product_name']}</td><td>{$row['product_price']}</td><td>{$row['quantity']}</td></tr>";
             }
 
             echo"</tbody></table>";
@@ -71,7 +71,7 @@ session_start();
             }
             if(mysqli_num_rows($ret)==0)
             {
-                      echo "<h3 class='text-center'>No such Books are thier....</h3><div class='col'><form action='dashboard.php'><button type='submit' class='btn action-btn btn-block mt-4'>Done</button></form></div>";
+                      echo "<h3 class='text-center'>No such Products are thier....</h3><div class='col'><form action='dashboard.php'><button type='submit' class='btn action-btn btn-block mt-4'>Done</button></form></div>";
 		
             }?>
                 
