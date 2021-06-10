@@ -29,7 +29,7 @@ session_start();
 		} 
 
 		// Create database
-		$sql = "CREATE DATABASE IF NOT EXISTS librarydb";
+		$sql = "CREATE DATABASE IF NOT EXISTS InventoryDB";
 		if ($conn->query($sql) === TRUE) {
 			//echo "Database created successfully";
 			
