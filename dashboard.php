@@ -47,13 +47,13 @@ session_start();
       </div>
 
       <div class="col-sm">
-        <button class="btn btn-block action-btn p-3" onclick="location.href='search-product.php'">
+        <button class="btn btn-block action-btn p-3" onclick="location.href='search-products.php'">
           <i class="fas fa-search pr-3"></i> Search
         </button>
       </div>
 
       <div class="col-sm">
-        <button class="btn btn-block action-btn p-3" onclick="location.href='view-available-product.php'">
+        <button class="btn btn-block action-btn p-3" onclick="location.href='view-available-products.php'">
           <i class="fas fa-stream pr-3"></i> View Available Products
         </button>
       </div>
