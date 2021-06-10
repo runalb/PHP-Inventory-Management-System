@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Issue Book</title>
+    <title>Sell Product</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css" >
@@ -39,20 +39,17 @@ session_start();
 
                 <div class="shadow-lg bg-white mt-4">
                     <div class="col form-header text-center p-3">
-                        Issue Book
+                    Sell Products
                     </div>
                     <form action="issue-book-action.php" method="get">
                         <div class="form-group mx-4 mt-4">
-                            <input type="text" required name="studentid" class="form-control" placeholder="Student ID">
+                            <input type="text" required name="product" class="form-control" placeholder="Enter Product ID or Name">
                         </div>
                         <div class="form-group mx-4 mt-4">
-                            <input type="text" required name="bookid" class="form-control" placeholder="Book ID">
+                            <input type="text" required name="qty" class="form-control" placeholder="Quantity">
                         </div>
-                        <div class="form-group mx-4 mt-4">
-                            <label for="lastDateToSubmit">Last Date to Return</label>
-                            <input type="date" id="lastDateToSubmit" required name="date" class="form-control" placeholder="Book ID">
-                        </div>
-                        <button type="submit" class="btn login-btn btn-block my-4">Issue Book</button>
+                        
+                        <button type="submit" class="btn login-btn btn-block my-4">Sell Product</button>
                     </form>
                 </div>
                 
