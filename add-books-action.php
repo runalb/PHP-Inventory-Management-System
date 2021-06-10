@@ -43,7 +43,7 @@ session_start();
 								die("Connection failed: " . $conn->connect_error);
 							} 
 							
-							$sql = "CREATE TABLE IF NOT EXISTS 	available_stock_table (
+							$sql = "CREATE TABLE IF NOT EXISTS available_stock_table (
 								product_id VARCHAR(50) PRIMARY KEY,
 								product_name VARCHAR(50), 
 								product_price VARCHAR(50),
@@ -62,8 +62,8 @@ session_start();
 							$qty = filter_input(INPUT_GET,'qty');
 
 
-							$sql = "INSERT INTO book_table (product_id, product_name, product_price,quantity) 
-							VALUES ('$productid', '$productname','$productprice','$qty')";
+							$sql = "INSERT INTO book_table (product_id, product_name, product_price, quantity) 
+							VALUES ('$productid', '$productname', '$productprice', '$qty')";
 
 
 							if ($conn->query($sql) === TRUE) {
