@@ -62,7 +62,7 @@ session_start();
 							$qty = filter_input(INPUT_GET,'qty');
 
 
-							$sql = "INSERT INTO book_table (product_id, product_name, product_price, quantity) 
+							$sql = "INSERT INTO available_stock_table (product_id, product_name, product_price, quantity) 
 							VALUES ('$productid', '$productname', '$productprice', '$qty')";
 
 
