@@ -1,0 +1,81 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.theme-color{
+    color: #017a9b;
+}
+
+.theme-btn{
+    color: #017a9b;
+    background-color: #017a9b;
+}
+
+.login-header{
+    color: #017a9b;
+    font-weight: 600;
+}
+
+.background{
+    width: 100%;
+    height: 100vh;
+}
+
+ .login-btn{
+     background-color: #017a9b;
+     color: white;
+ }
+ .login-btn:hover{
+     color: white;
+ }
+
+ /* Dashboard */
+
+ .logout-btn{
+     color: #017a9b;
+     border: 1px solid #017a9b;
+ }
+
+ .logout-btn:hover{
+    color: white;
+    border: 1px solid #017a9b;
+    background-color: #017a9b;
+}
+
+.action-btn{
+    background-color: #017a9b;
+    color: white;
+}
+
+.action-btn:hover{
+    background-color: #4da2b9;
+    color: white;
+}
+
+.fa-plus-square{
+    color: white;
+}
+
+/* Add Books */
+
+.form-header{
+    background-color: #F7F7F7;
+    color: #017a9b;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+/* Search Page */
+
+.search-icon{
+    color: white;
+}
+
+.search-btn{
+    background-color: #017a9b;
+}
+
+h1,h2,h3{
+    font-weight: 700;
+}
+
