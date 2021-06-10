@@ -41,19 +41,19 @@ session_start();
     <div class="row my-4">
 
       <div class="col-sm">
-        <button class="btn btn-block action-btn p-3" onclick="location.href='add-books.php'">
+        <button class="btn btn-block action-btn p-3" onclick="location.href='add-product.php'">
           <i class="far fa-plus-square pr-3"></i> Add Product
         </button>
       </div>
 
       <div class="col-sm">
-        <button class="btn btn-block action-btn p-3" onclick="location.href='search-books.php'">
+        <button class="btn btn-block action-btn p-3" onclick="location.href='search-product.php'">
           <i class="fas fa-search pr-3"></i> Search
         </button>
       </div>
 
       <div class="col-sm">
-        <button class="btn btn-block action-btn p-3" onclick="location.href='view-books.php'">
+        <button class="btn btn-block action-btn p-3" onclick="location.href='view-available-product.php'">
           <i class="fas fa-stream pr-3"></i> View Available Products
         </button>
       </div>
