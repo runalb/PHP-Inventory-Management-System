@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Books</title>
+    <title>Add Products</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css" >
@@ -38,22 +38,22 @@ session_start();
 
                 <div class="shadow-lg bg-white mt-4">
                     <div class="col form-header text-center p-3">
-                        Add Books
+                        Add Products
                     </div>
                     <form action="add-books-action.php" method="get">
                         <div class="form-group mx-4 mt-4">
-                            <input type="text" required name="bookid" class="form-control" placeholder="Book ID">
+                            <input type="text" required name="productid" class="form-control" placeholder="Product ID">
                         </div>
                         <div class="form-group mx-4 mt-4">
-                            <input type="text" required name="bookname" class="form-control" placeholder="Book Name">
+                            <input type="text" required name="productname" class="form-control" placeholder="Product Name">
                         </div>
                         <div class="form-group mx-4 mt-4">
-                            <input type="text" required name="autname" class="form-control" placeholder="Author Name">
+                            <input type="text" required name="productprice" class="form-control" placeholder="Product Price">
                         </div>
                         <div class="form-group mx-4 mt-4">
                             <input type="number" required name="qty" class="form-control" placeholder="Quantity">
                         </div>
-                        <button type="submit" class="btn login-btn btn-block my-4">Add Books</button>
+                        <button type="submit" class="btn login-btn btn-block my-4">Add Product</button>
                     </form>
                 </div>
                 
