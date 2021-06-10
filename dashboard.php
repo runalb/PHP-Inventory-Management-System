@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Library Management System</title>
+    <title>Dashboard - Inventory Management System</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css" >
@@ -42,7 +42,7 @@ session_start();
 
       <div class="col-sm">
         <button class="btn btn-block action-btn p-3" onclick="location.href='add-books.php'">
-          <i class="far fa-plus-square pr-3"></i> Add Books
+          <i class="far fa-plus-square pr-3"></i> Add Product
         </button>
       </div>
 
@@ -54,7 +54,7 @@ session_start();
 
       <div class="col-sm">
         <button class="btn btn-block action-btn p-3" onclick="location.href='view-books.php'">
-          <i class="fas fa-stream pr-3"></i> View Books
+          <i class="fas fa-stream pr-3"></i> View Available Products
         </button>
       </div>
 
