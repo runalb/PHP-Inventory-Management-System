@@ -34,7 +34,7 @@ session_start();
 							$servername = "localhost";
 							$username = "root";
 							$password = "";
-							$dbname ="librarydb";
+							$dbname ="inventory_db";
 
 							// Create connection
 							$conn = new mysqli($servername, $username, $password, $dbname);
@@ -43,10 +43,10 @@ session_start();
 								die("Connection failed: " . $conn->connect_error);
 							} 
 							
-							$sql = "CREATE TABLE IF NOT EXISTS book_table (
-								book_id VARCHAR(50) PRIMARY KEY,
-								book_name VARCHAR(50), 
-								author_name VARCHAR(50),
+							$sql = "CREATE TABLE IF NOT EXISTS 	available_stock_table (
+								product_id VARCHAR(50) PRIMARY KEY,
+								product_name VARCHAR(50), 
+								product_price VARCHAR(50),
 								quantity INT(11)
 							)";
 
@@ -56,23 +56,23 @@ session_start();
 							echo "Error creating table: " . $conn->error;
 							}
 							
-							$bookid = filter_input(INPUT_GET,'bookid');
-							$bookname = filter_input(INPUT_GET,'bookname');
-							$autname = filter_input(INPUT_GET,'autname');
+							$productid = filter_input(INPUT_GET,'productid');
+							$productname = filter_input(INPUT_GET,'productname');
+							$productprice = filter_input(INPUT_GET,'productprice');
 							$qty = filter_input(INPUT_GET,'qty');
 
 
-							$sql = "INSERT INTO book_table (book_id, book_name, author_name,quantity) 
-							VALUES ('$bookid', '$bookname','$autname','$qty')";
+							$sql = "INSERT INTO book_table (product_id, product_name, product_price,quantity) 
+							VALUES ('$productid', '$productname','$productprice','$qty')";
 
 
 							if ($conn->query($sql) === TRUE) {
 							//echo "New record created successfully";
-							echo "<h3 class='text-center m-4'>New Book Added successfully</h3><form action='dashboard.php'><button class='btn btn-block login-btn' type='submit'>OK</button></form>";
+							echo "<h3 class='text-center m-4'>New Product Added successfully</h3><form action='dashboard.php'><button class='btn btn-block login-btn' type='submit'>OK</button></form>";
 							
 							
 							} else {
-								echo "<h3 class='text-center m-4'>Book ID Already Taken!!!</h3><form action='add-books.php'><button class='btn btn-block login-btn' type='submit'>OK</button></form>";
+								echo "<h3 class='text-center m-4'>Product ID Already Taken!!!</h3><form action='add-books.php'><button class='btn btn-block login-btn' type='submit'>OK</button></form>";
 							}
 
 							$conn->close();
