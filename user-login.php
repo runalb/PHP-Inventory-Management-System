@@ -29,7 +29,7 @@ session_start();
 		} 
 
 		// Create database
-		$sql = "CREATE DATABASE IF NOT EXISTS inventorydb";
+		$sql = "CREATE DATABASE IF NOT EXISTS inventory_db";
 		if ($conn->query($sql) === TRUE) {
 			//echo "Database created successfully";
 			
