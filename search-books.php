@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Books</title>
+    <title>Search Products</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css" >
@@ -43,7 +43,7 @@ session_start();
                 
                   <form action="search-books-action.php" method="get">
                   <div class="input-group md-form form-md form-2 pl-0">
-                    <input class="form-control my-0 py-1" name="query" type="text" placeholder="Enter Book ID or Name" aria-label="Search">
+                    <input class="form-control my-0 py-1" name="query" type="text" placeholder="Enter Product ID or Name" aria-label="Search">
                     <div class="input-group-append">
                       <button class="btn">
                       <span class="input-group-text search-btn" id="basic-text1"><i class="fas fa-search search-icon"
