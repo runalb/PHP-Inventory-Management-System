@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management System</title>
+    <title>Inventory Management System</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css" >
@@ -28,7 +28,7 @@ session_start();
             <div class="col-12 mx-auto">
                 <div class="mt-4">
                     <div class="text-center p-2">
-                        <h1 class="theme-color">Library Management System</h1>
+                        <h1 class="theme-color">Inventory Management System</h1>
                         <h5>DBMS Mini Project</h5>
                     </div>
                 </div>
