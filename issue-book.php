@@ -41,7 +41,7 @@ session_start();
                     <div class="col form-header text-center p-3">
                     Sell Products
                     </div>
-                    <form action="issue-book-action.php" method="get">
+                    <form action="sell-product-action.php" method="get">
                         <div class="form-group mx-4 mt-4">
                             <input type="text" required name="product" class="form-control" placeholder="Enter Product ID or Name">
                         </div>
