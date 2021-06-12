@@ -54,7 +54,7 @@ session_start();
 
       <div class="col-sm">
         <button class="btn btn-block action-btn p-3" onclick="location.href='view-available-products.php'">
-          <i class="fas fa-stream pr-3"></i> View Available Products
+          <i class="fas fa-boxes pr-3"></i> View Available Products
         </button>
       </div>
 
@@ -63,13 +63,13 @@ session_start();
     <div class="row my-4">
       <div class="col-sm">
         <button class="btn btn-block action-btn p-3" onclick="location.href='sell-product.php'">
-          <i class="fas fa-book pr-3"></i> Sell Product
+          <i class="far fa-minus-square pr-3"></i> Sell Product
         </button>
       </div>
 
       <div class="col-sm">
         <button class="btn btn-block action-btn p-3" onclick="location.href='return-book.php'">
-          <i class="fas fa-book pr-3"></i> Return Books
+          <i class="fas fa-boxes pr-3"></i> View Sold Products
         </button>
       </div>
 
