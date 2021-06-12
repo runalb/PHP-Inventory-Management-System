@@ -53,7 +53,7 @@ session_start();
 			              die("Connection failed: " . $conn->connect_error);
 		              } 
 
-                  $sql='SELECT * FROM available_stock_table';
+                  $sql='SELECT * FROM available_products_table';
                   $ret=mysqli_query($conn,$sql);
                   if(mysqli_num_rows($ret)>0)
                   {

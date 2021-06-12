@@ -53,7 +53,7 @@ session_start();
 			              die("Connection failed: " . $conn->connect_error);
 		              } 
 
-                  $sql='SELECT * FROM sold_product_table';
+                  $sql='SELECT * FROM sold_products_table';
                   $ret=mysqli_query($conn,$sql);
                   if(mysqli_num_rows($ret)>0)
                   {
