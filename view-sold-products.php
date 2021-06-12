@@ -53,12 +53,12 @@ session_start();
 			              die("Connection failed: " . $conn->connect_error);
 		              } 
 
-                  $sql='SELECT * FROM available_stock_table';
+                  $sql='SELECT * FROM sold_product_table';
                   $ret=mysqli_query($conn,$sql);
                   if(mysqli_num_rows($ret)>0)
                   {
 					          
-                    echo"<table class='table table-striped'><thead><tr><th scope='col'>Product ID</th><th scope='col'>Product Name</th><th scope='col'>Product Price</th><th scope='col'>Number of Copies</th></tr></thead><tbody>";
+                    echo"<table class='table table-striped'><thead><tr><th scope='col'>Product ID</th><th scope='col'>Product Name</th><th scope='col'>Product Price</th><th scope='col'>Quantity</th></tr></thead><tbody>";
                 
 					          while($row=mysqli_fetch_assoc($ret))
 					          {
