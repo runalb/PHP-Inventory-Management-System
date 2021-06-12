@@ -72,7 +72,7 @@ session_start();
 							
 							
 							} else {
-								echo "<h3 class='text-center m-4'>Product ID Already Taken!!!</h3><form action='add-books.php'><button class='btn btn-block login-btn' type='submit'>OK</button></form>";
+								echo "<h3 class='text-center m-4'>Product ID Already Taken!!!</h3><form action='add-product.php'><button class='btn btn-block login-btn' type='submit'>OK</button></form>";
 							}
 
 							$conn->close();
