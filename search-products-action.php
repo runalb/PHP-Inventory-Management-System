@@ -55,7 +55,7 @@ session_start();
 		
 		$product = filter_input(INPUT_GET,'query');
 		
-		$sql="SELECT * FROM available_stock_table WHERE product_id='$product' OR product_name='$product'";
+		$sql="SELECT * FROM available_products_table WHERE product_id='$product' OR product_name='$product'";
 		$ret=mysqli_query($conn,$sql);
             if(mysqli_num_rows($ret)>0)
             {

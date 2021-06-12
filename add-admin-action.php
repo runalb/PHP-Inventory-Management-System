@@ -57,7 +57,7 @@ session_start();
                 )";
 
                 if ($conn->query($sql) === TRUE) {
-                //echo "Table admin_database created successfully";
+                //echo "admin_table created successfully";
                 } else {
                 echo "Error creating table: " . $conn->error;
                 }

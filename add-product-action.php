@@ -51,7 +51,7 @@ session_start();
 							)";
 
 							if ($conn->query($sql) === TRUE) {
-							//echo "Table admin_database created successfully";
+							//echo "available_products_table created successfully";
 							} else {
 							echo "Error creating table: " . $conn->error;
 							}
