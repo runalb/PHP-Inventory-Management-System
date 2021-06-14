@@ -44,7 +44,7 @@ session_start();
                     <form action="sell-product-action.php" method="get">
      
                       <div class='form-group mx-4 mt-4'>
-                        <select name='productname' class="form-control" required>
+                        <select name='productid' class="form-control" required>
                           <option value="" disabled selected hidden>-- Select Product --</option>
                           <?php
                               $servername = "localhost";
