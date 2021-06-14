@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Issue Book - Action</title>
+    <title>Sell Product - Action</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css" >
@@ -39,7 +39,7 @@ session_start();
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
-		$dbname ="librarydb";
+		$dbname ="inventory_db";
 
 		// Create connection
 		$conn = new mysqli($servername, $username, $password, $dbname);
@@ -48,11 +48,12 @@ session_start();
 			die("Connection failed: " . $conn->connect_error);
 		} 
 		
-		$sql = "CREATE TABLE IF NOT EXISTS issue_table (
-			student_id VARCHAR(50),
-			book_id VARCHAR(50),
-			date VARCHAR(30)
-			)";
+		$sql = "CREATE TABLE IF NOT EXISTS sold_products_table (
+			product_id VARCHAR(50) PRIMARY KEY,
+			product_name VARCHAR(50), 
+			product_price VARCHAR(50),
+			quantity INT(11)
+		)";
 
 		if ($conn->query($sql) === TRUE) {
 		//echo "Table admin_database created successfully";
