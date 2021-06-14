@@ -49,7 +49,7 @@ session_start();
 		} 
 		
 		$sql = "CREATE TABLE IF NOT EXISTS sold_products_table (
-			product_id VARCHAR(50) PRIMARY KEY,
+			product_id VARCHAR(50),
 			product_name VARCHAR(50), 
 			product_price VARCHAR(50),
 			quantity INT(11)
@@ -62,47 +62,64 @@ session_start();
 		}
 		
 		
-		$studentid = filter_input(INPUT_GET,'studentid');
-		$bookid = filter_input(INPUT_GET,'bookid');
-		$date = filter_input(INPUT_GET,'date');
-		
-		$sql1 = "SELECT * FROM issue_table WHERE student_id='$studentid'";
-		$res = $conn->query($sql1);
+		$productid = filter_input(INPUT_GET,'productid');
+		$qty = filter_input(INPUT_GET,'qty');
 
-		if ($res->num_rows < 3) {
-		
-			$sql1 = "SELECT * FROM book_table WHERE book_id='$bookid' AND quantity>0";
-			$result = $conn->query($sql1);
-
-			if ($result->num_rows > 0) {
-				$sql = "INSERT INTO issue_table (student_id,book_id, date) 
-				VALUES ('$studentid','$bookid','$date')";
-			
-				if ($conn->query($sql) === TRUE) {
-				$sql2 = "UPDATE book_table SET quantity=quantity-1 WHERE book_id='$bookid'";
-				$resul = $conn->query($sql2);
-				
-				//echo "New record created successfully";
-				echo "<h4 class='m-4 text-center'>Book Issued Successfully....</h4><form action='dashboard.php'><button class='btn btn-block action-btn m-4' type='submit'>Done</button></form>";
+		//test
+		echo $productid; echo $qty;
 		
 		
-				} else {
-					// echo "<h4 class='m-4 text-center'>Book ID is already taken!!!!</h4><form action='dashboard.php'><button class='btn btn-block action-btn m-4' type='submit'>Done</button></form>";
+		$sql="SELECT * FROM available_products_table WHERE product_id='$productid' AND quantity>0";
+		$ret=mysqli_query($conn,$sql);
+            if(mysqli_num_rows($ret)>0)
+            {
+				//test
+                echo"<br><br>";
+				while($row=mysqli_fetch_assoc($ret))
+				{
 					
-				}
-			}
-		
-			else {
-				echo "<h4 class='m-4 text-center'>No such book found</h4><form action='dashboard.php'><button class='btn btn-block action-btn m-4' type='submit'>Done</button></form>";
-			}
-		}
-		else
-		{
-			echo "<h4 class='m-4 text-center'>Already 3 Books are taken...</h4><form action='dashboard.php'><button class='btn btn-block action-btn m-4' type='submit'>Done</button></form>";
-			
-		}
+					//test
+					echo"{$row['product_id']} - {$row['product_name']} - {$row['product_price']} - {$row['quantity']}<br><br>";
+					
+					
+					$productid_value = $row['product_id'];
+					$productname_value = $row['product_name'];
+					$productprice_value = $row['product_price'];
+					$productquantity_value = $row['quantity'];
 
-		$conn->close();
+	
+
+				}
+
+				//test
+				echo $productid_value , $productname_value, $productprice_value,$productquantity_value;
+
+				
+				$sql2 = "INSERT INTO sold_products_table (product_id, product_name, product_price, quantity) VALUES ('$productid_value', '$productname_value', '$productprice_value', '$qty')";
+				
+				if ($conn->query($sql2) === TRUE) {
+					echo "New record created successfully";
+
+					//removing qty from avaliable table
+					$sql3 = "UPDATE book_table SET quantity=quantity+1 WHERE book_id='$bookid'";
+					
+					
+				} else {
+					echo "Fail";
+				}
+				
+				
+				
+			}
+
+            if(mysqli_num_rows($ret)==0)
+            {
+				echo"0 res";
+            }
+			$conn->close();
+			
+				
+			
 		
 		?>
                 
