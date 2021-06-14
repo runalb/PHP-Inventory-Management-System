@@ -42,14 +42,41 @@ session_start();
                     Sell Products
                     </div>
                     <form action="sell-product-action.php" method="get">
-                        <div class="form-group mx-4 mt-4">
-                            <input type="text" required name="product" class="form-control" placeholder="Enter Product ID or Name">
-                        </div>
-                        <div class="form-group mx-4 mt-4">
-                            <input type="text" required name="qty" class="form-control" placeholder="Quantity">
-                        </div>
+     
+                      <div class='form-group mx-4 mt-4'>
+                        <select name='productname' class="form-control">
+                          <option disabled selected>-- Select Product --</option>
+                          <?php
+                              $servername = "localhost";
+                              $username = "root";
+                              $password = "";
+                              $dbname ="inventory_db";
+            
+                              // Create connection
+                              $conn = new mysqli($servername, $username, $password, $dbname);
+                              // Check connection
+                              if ($conn->connect_error) {
+                                die("Connection failed: " . $conn->connect_error);
+                              } 
+
+                              $sql='SELECT product_name FROM available_products_table';
+                              $records = mysqli_query($conn,$sql);
+                            
+                              while($data = mysqli_fetch_array($records))
+                              {
+                                // displaying data in option menu
+                                echo"<option value={$data['product_name']}> {$data['product_name']} </option>";
+                              }	
+                          ?>  
+                        </select>
+                      </div>
+
+
+                      <div class="form-group mx-4 mt-4">
+                        <input type="text" required name="qty" class="form-control" placeholder="Quantity">
+                      </div>
                         
-                        <button type="submit" class="btn login-btn btn-block my-4">Sell Product</button>
+                      <button type="submit" class="btn login-btn btn-block my-4">Sell Product</button>
                     </form>
                 </div>
                 
