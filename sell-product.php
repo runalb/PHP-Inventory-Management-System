@@ -59,13 +59,13 @@ session_start();
                                 die("Connection failed: " . $conn->connect_error);
                               } 
 
-                              $sql='SELECT product_name FROM available_products_table';
+                              $sql='SELECT product_id,product_name FROM available_products_table';
                               $records = mysqli_query($conn,$sql);
                             
                               while($data = mysqli_fetch_array($records))
                               {
                                 // displaying data in option menu
-                                echo"<option value={$data['product_name']}> {$data['product_name']} </option>";
+                                echo"<option value={$data['product_id']}>Product id: {$data['product_id']} - {$data['product_name']} </option>";
                               }	
                           ?>  
                         </select>
