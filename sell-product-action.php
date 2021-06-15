@@ -63,13 +63,13 @@ session_start();
 		
 		
 		$productid = filter_input(INPUT_GET,'productid');
-		$qty = filter_input(INPUT_GET,'qty');
+		$sellqty = filter_input(INPUT_GET,'qty');
 
 		//test
-		echo $productid; echo $qty;
+		echo "{$productid} - {$sellqty}";
 		
 		
-		$sql="SELECT * FROM available_products_table WHERE product_id='$productid' AND quantity>0";
+		$sql="SELECT * FROM available_products_table WHERE product_id='$productid' AND quantity>='$sellqty'";
 		$ret=mysqli_query($conn,$sql);
             if(mysqli_num_rows($ret)>0)
             {
@@ -92,20 +92,27 @@ session_start();
 				}
 
 				//test
-				echo $productid_value , $productname_value, $productprice_value,$productquantity_value;
+				echo $productid_value , $productname_value, $productprice_value, $productquantity_value;
 
 				
-				$sql2 = "INSERT INTO sold_products_table (product_id, product_name, product_price, quantity) VALUES ('$productid_value', '$productname_value', '$productprice_value', '$qty')";
+				$sql2 = "INSERT INTO sold_products_table (product_id, product_name, product_price, quantity) VALUES ('$productid_value', '$productname_value', '$productprice_value', '$sellqty')";
 				
 				if ($conn->query($sql2) === TRUE) {
-					echo "New record created successfully";
+					echo "<br>New record created successfully";
 
-					//removing qty from avaliable table
-					$sql3 = "UPDATE book_table SET quantity=quantity+1 WHERE book_id='$bookid'";
-					
-					
+					$reaming_qty = $productquantity_value - $sellqty;
+					echo "<br><br>{$reaming_qty } = {$productquantity_value} - {$sellqty}";
+
+					//set reaming_qty to avaliable produtcts table
+					$sql3 = "UPDATE available_products_table SET quantity='$reaming_qty' WHERE product_id='$productid'";
+					if ($conn->query($sql3) === TRUE) {
+						echo "<br>Update record successfully";
+					}else{
+						echo"fail update";
+					}
+
 				} else {
-					echo "Fail";
+					echo "Fail insert";
 				}
 				
 				
@@ -114,7 +121,7 @@ session_start();
 
             if(mysqli_num_rows($ret)==0)
             {
-				echo"0 res";
+				echo"<br><br>0 res";
             }
 			$conn->close();
 			
