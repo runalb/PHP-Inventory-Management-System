@@ -64,7 +64,7 @@ session_start();
                         <form action="user-login-action.php" method="get">
                             <div class="form-group">
                             <label for="loginUsername">Username</label>
-                            <input type="text" name="username" class="form-control" id="loginUsername" aria-describedby="emailHelp">
+                            <input autofocus type="text" name="username" class="form-control" id="loginUsername" aria-describedby="emailHelp">
                             </div>
                             <div class="form-group pb-2">
                             <label for="loginPassword">Password</label>
