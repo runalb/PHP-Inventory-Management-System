@@ -73,7 +73,7 @@ session_start();
 
 
                       <div class="form-group mx-4 mt-4">
-                        <input type="text" required name="qty" class="form-control" placeholder="Quantity">
+                        <input type="text" required name="sellqty" class="form-control" placeholder="Quantity">
                       </div>
                         
                       <button type="submit" class="btn login-btn btn-block my-4">Sell Product</button>
