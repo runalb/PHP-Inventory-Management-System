@@ -33,7 +33,7 @@ session_start();
       <div class="container h-100">
         <div class="row align-items-center h-100" >
             
-          <div class="col-8 mx-auto">                  
+          <div class="col-9 mx-auto">                  
                 <?php
 		
 		$servername = "localhost";
@@ -64,7 +64,7 @@ session_start();
 		
 		
 		$productid = filter_input(INPUT_GET,'productid');
-		$sellqty = filter_input(INPUT_GET,'qty');
+		$sellqty = filter_input(INPUT_GET,'sellqty');
 
 		//test
 		echo "{$productid} - {$sellqty}";
@@ -108,22 +108,28 @@ session_start();
 					$sql3 = "UPDATE available_products_table SET quantity='$reaming_qty' WHERE product_id='$productid'";
 					if ($conn->query($sql3) === TRUE) {
 						echo "<br>Update record successfully";
+						echo "<h3 class='text-center m-4'>Product sold successfully</h3><form action='dashboard.php'><button class='btn btn-block login-btn' type='submit'>OK</button></form>";
+
 					}else{
 						echo"fail update";
 					}
-
+ 
 				} else {
 					echo "Fail insert";
 				}
 				
-				
-				
 			}
 
-            if(mysqli_num_rows($ret)==0)
+            else
             {
 				echo"<br><br>0 res";
+				echo "<h3 class='text-center m-4'>Enter Quantity is less than available stock <br><u>or</u><br> Product is Out of Stock!</h3><form action='dashboard.php'><button class='btn btn-block login-btn' type='submit'>OK</button></form>";
+
             }
+
+			
+
+
 			$conn->close();
 			
 				
