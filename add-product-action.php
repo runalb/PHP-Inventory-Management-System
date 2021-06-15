@@ -10,7 +10,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css" >
     <link rel="stylesheet" href="style.css">
-    <title>Add Books - Action</title>
+    <title>Add Product - Action</title>
 </head>
 <body>
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
