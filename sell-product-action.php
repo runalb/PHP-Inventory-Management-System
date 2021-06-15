@@ -66,75 +66,57 @@ session_start();
 		$productid = filter_input(INPUT_GET,'productid');
 		$sellqty = filter_input(INPUT_GET,'sellqty');
 
-		//test
-		echo "{$productid} - {$sellqty}";
+		
 		
 		
 		$sql="SELECT * FROM available_products_table WHERE product_id='$productid' AND quantity>='$sellqty'";
 		$ret=mysqli_query($conn,$sql);
             if(mysqli_num_rows($ret)>0)
             {
-				//test
-                echo"<br><br>";
+				
 				while($row=mysqli_fetch_assoc($ret))
 				{
-					
 					//test
-					echo"{$row['product_id']} - {$row['product_name']} - {$row['product_price']} - {$row['quantity']}<br><br>";
-					
+					//echo"{$row['product_id']} - {$row['product_name']} - {$row['product_price']} - {$row['quantity']}<br><br>";
 					
 					$productid_value = $row['product_id'];
 					$productname_value = $row['product_name'];
 					$productprice_value = $row['product_price'];
 					$productquantity_value = $row['quantity'];
 
-	
-
 				}
 
 				//test
-				echo $productid_value , $productname_value, $productprice_value, $productquantity_value;
+				//echo $productid_value , $productname_value, $productprice_value, $productquantity_value;
 
-				
 				$sql2 = "INSERT INTO sold_products_table (product_id, product_name, product_price, quantity) VALUES ('$productid_value', '$productname_value', '$productprice_value', '$sellqty')";
 				
 				if ($conn->query($sql2) === TRUE) {
-					echo "<br>New record created successfully";
+					//echo "<br>sold product added successfully to sold_products_table";
 
+					//set reaming_qty to avaliable_produtcts_table
 					$reaming_qty = $productquantity_value - $sellqty;
-					echo "<br><br>{$reaming_qty } = {$productquantity_value} - {$sellqty}";
 
-					//set reaming_qty to avaliable produtcts table
 					$sql3 = "UPDATE available_products_table SET quantity='$reaming_qty' WHERE product_id='$productid'";
 					if ($conn->query($sql3) === TRUE) {
-						echo "<br>Update record successfully";
 						echo "<h3 class='text-center m-4'>Product sold successfully</h3><form action='dashboard.php'><button class='btn btn-block login-btn' type='submit'>OK</button></form>";
 
 					}else{
-						echo"fail update";
+						echo "fail update";
 					}
  
 				} else {
 					echo "Fail insert";
 				}
-				
 			}
 
             else
             {
-				echo"<br><br>0 res";
 				echo "<h3 class='text-center m-4'>Enter Quantity is less than available stock <br><u>or</u><br> Product is Out of Stock!</h3><form action='dashboard.php'><button class='btn btn-block login-btn' type='submit'>OK</button></form>";
-
             }
-
-			
 
 
 			$conn->close();
-			
-				
-			
-		
 		?>
                 
           </div>
