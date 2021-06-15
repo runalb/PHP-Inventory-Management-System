@@ -32,7 +32,7 @@ session_start();
       <div class="container h-100">
         <div class="row align-items-center h-100" >
             
-          <div class="col-8 mx-auto">
+          <div class="col-10 mx-auto">
 
                 <div class="mt-4">
                     <div class="text-center p-3">
@@ -58,17 +58,17 @@ session_start();
                   if(mysqli_num_rows($ret)>0)
                   {
 					          
-                    echo"<table class='table table-striped'><thead><tr><th scope='col'>Product ID</th><th scope='col'>Product Name</th><th scope='col'>Product Price</th><th scope='col'>Quantity</th></tr></thead><tbody>";
+                    echo"<table class='table table-striped'><thead><tr> <th scope='col'>Date Time</th>  <th scope='col'>Product ID</th> <th scope='col'>Product Name</th><th scope='col'>Product Price</th><th scope='col'>Quantity</th></tr></thead><tbody>";
                 
 					          while($row=mysqli_fetch_assoc($ret))
 					          {
-						          echo"<tr><th scope='row'>{$row['product_id']}</th><td>{$row['product_name']}</td><td>{$row['product_price']}</td><td>{$row['quantity']}</td></tr>";
+						          echo"<tr><td>{$row['date_time']}</td> <td>{$row['product_id']}</td> <td>{$row['product_name']}</td> <td>{$row['product_price']}</td><td>{$row['quantity']}</td></tr>";
 					          }
             
 			            echo"</tbody></table>";
                      
                   echo"<form action='dashboard.php'><button class='btn action-btn btn-block' type='submit'>Go Back</button></form>";
-                  echo"</div>";
+                  echo"<br></div>";
                   }
                   if(mysqli_num_rows($ret)==0)
                   {
