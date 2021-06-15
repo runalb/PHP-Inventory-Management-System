@@ -49,6 +49,7 @@ session_start();
 		} 
 		
 		$sql = "CREATE TABLE IF NOT EXISTS sold_products_table (
+			date_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 			product_id VARCHAR(50),
 			product_name VARCHAR(50), 
 			product_price VARCHAR(50),
