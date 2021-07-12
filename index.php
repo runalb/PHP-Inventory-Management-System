@@ -82,19 +82,19 @@ session_start();
                     <div class="col-8">
                         <div class="row">
                             <div class="col-4">
-                                <img src="images/runal2.png" class="rounded-circle" width="100" height="100">
+                                <!-- <img src="images/runal2.png" class="rounded-circle" width="100" height="100"> -->
                                 <h6 class="m-1">Runal Pramod Banarse</h6>
                                 <a href="#" class="theme-color">17BE0456</a>
                             </div>  
 
                             <div class="col-4">
-                                <img src="images/runal2.png" class="rounded-circle" width="100" height="100">
+                                <!-- <img src="images/runal2.png" class="rounded-circle" width="100" height="100"> -->
                                 <h6 class="m-1">Prathamesh Vijay Thakare</h6>
                                 <a href="#" class="theme-color">17BE0458</a>
                             </div>
 
                             <div class="col-4">
-                                <img src="images/runal2.png" class="rounded-circle" width="100" height="100">
+                                <!-- <img src="images/runal2.png" class="rounded-circle" width="100" height="100"> -->
                                 <h6 class="m-1">Aditya Nandkumar Yewale</h6>
                                 <a href="#" class="theme-color">17BE0308</a>
                             </div>
