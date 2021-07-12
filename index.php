@@ -15,6 +15,33 @@ session_start();
     
 </head>
 <body>
+    <?php
+		
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } 
+
+        // Create database
+        $sql = "CREATE DATABASE IF NOT EXISTS inventory_db";
+        if ($conn->query($sql) === TRUE) {
+            //echo "Database created successfully";
+            
+        
+        
+        $conn->close();
+        }
+    ?>
+
+
+
+
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
         <a class="navbar-brand my-0 mr-md-auto" href="dashboard.php">
