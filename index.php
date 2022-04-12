@@ -56,7 +56,7 @@ session_start();
                 <div class="mt-4">
                     <div class="text-center p-2">
                         <h1 class="theme-color">Inventory Management System</h1>
-                        <h5>DBMS Mini Project</h5>
+                        <h5>Project</h5>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@ session_start();
             <div class="col-lg-12 center team-menbers">
                 <img src="images/runal.png" class="rounded-circle" width="120" height="120">
                 <h6 class="m-1">Runal Banarse</h6>
-                <a href="#" class="theme-color">runalb.com</a>
+                <a href="https://runalb.com" class="theme-color">runalb.com</a>
             </div>
                
         </div>
