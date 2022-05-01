@@ -56,7 +56,7 @@ session_start();
                 <div class="mt-4">
                     <div class="text-center p-2">
                         <h1 class="theme-color">Inventory Management System</h1>
-                        <h5>Project</h5>
+                        <h5></h5>
                     </div>
                 </div>
             </div>
