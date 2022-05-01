@@ -24,6 +24,19 @@ session_start();
 
     
     <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname ="inventory_db";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } 
+        
+        
 		$username = filter_input(INPUT_GET,'username');
 		$password = filter_input(INPUT_GET,'password');
 		
@@ -33,17 +46,6 @@ session_start();
             header("Location: dashboard.php");
 			
 		}else{
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname ="inventory_db";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            } 
 
             $sql = "SELECT * FROM admin_table WHERE user_name='$username' AND user_password='$password'";
             $result = $conn->query($sql);
